@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bell-212 CBT System</title>
+  <link rel="stylesheet" type="text/css" href="semantic/datatables/dataTables.semanticui.min.css">
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="js/jquery/jquery-3.3.1.js"></script>
+    <script src="js/datatables/jquery.dataTables.min.js"></script>
+  <script src="js/datatables/dataTables.semanticui.min.js"></script>
+
+<script src="semantic/semantic.min.js"></script>
+
+  <!-- For showing alert 
+  <script type="text/javascript" src="Jquery/Jquery3.js"></script>
+  <script type="text/javascript" src="semantic-ui/semanticui.js"></script>
+  <script type="text/javascript" src="Semantic-UI-Alert/Semantic-UI-Alert.js"></script>
+  <link rel="stylesheet" type="text/css" href="semantic-ui/semanticui.css">
+  <link rel="stylesheet" type="text/css" href="Semantic-UI-Alert/Semantic-UI-Alert.css"> -->
+
+
+  <style>
+  * {
+    font-family: "Open Sans Regular";
+    font-size: 1.01em;
+  }
+
+  .ui .button {
+    font-family: "Open Sans Regular";
+
+    font-size: 1.01em;
+  }
+  
+  body {
+    overflow: auto;
+  }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="ui top red pointing menu">
+
+    <div class="ui container" style="padding-left: 70px;">
+      <a href="admin_panel.php">
+        <h2 class="ui header left aligned">
+          <img src="images/bell-logo2.jpg"></img>
+          <div class="content">
+            Bell-212
+            <div class="sub header">CBT Question Bank</div>
+          </div>
+        </h2>
+      </a>
+      <!-- <p class="item" style="font-size: 1.20em;">Bell-212 Tutorial</p></p> -->
+
+    </div>
+  </div>
+  
+		<button class="ui button green" id="addQuestionButton"
+				style="margin-top: 10px;margin-bottom: 10px;padding: 15px; margin-left:15%" >
+				<i class="add icon"></i>Add Question
+				
+		</button>
+
+  <!-- <div class="ui segment"> -->
+  <div class="ui grid">
+    <div class="stretched row" style="height: 100vh; padding-left: 15%; padding-right: 15%;">
+      <div class="column">
+        <table id="example" class="ui celled table" style="width:100%">
+        <thead>
+            <tr>
+                <th style="width:70%">Question Title</th>
+                <th style="text-align:center">Edit</th>
+                <th style="text-align:center">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+		<tr>
+					<td>Bell-212 hel is used for:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit3'
+							onclick = 'showUpdateModal("3","Bell-212 hel is used for:","Air Ambulance","VIP msn","Transportation of personnel","All are correct","2","3");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete3'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>The overall length of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit4'
+							onclick = 'showUpdateModal("4","The overall length of Bell 212 hel is:","50\'","57\'3.25\'\'","55\'5.55\'\'","60\'","2","1");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete4'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>The fuselage length without M/R and T/R of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit5'
+							onclick = 'showUpdateModal("5","The fuselage length without M/R and T/R of Bell 212 hel is:","41&#39;8.17\x22","50&#39;","40&#39;2.45\x22","55&#39;","2","2");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete5'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>The total height of Bell 212 hel is</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit6'
+							onclick = 'showUpdateModal("6","The total height of Bell 212 hel is","10\'11.17\"","12\' 6.83\'\'","15\' 8.45\"","16\' 5.15\'\'","2","1");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete6'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>The total height (T/R horizontally) of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit7'
+							onclick = 'showUpdateModal("7","The total height (T/R horizontally) of Bell 212 hel is:","12\'10.18\"","13\' 10.15\'\'","10\' 8.12\"","11\' 10.11\'\'","2","2");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete7'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>Normal wide of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit8'
+							onclick = 'showUpdateModal("8","Normal wide of Bell 212 hel is:","9\'4.48\"","10\'","10\'5.25\"","8\"6.45\'","2","4");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete8'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>Tip speed of main rotor blade of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit9'
+							onclick = 'showUpdateModal("9","Tip speed of main rotor blade of Bell 212 hel is:","915 ft/sec","814 ft/sec","725 ft/sec","850 ft/sec","2","1");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete9'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>Tip speed of tail rotor blade of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit10'
+							onclick = 'showUpdateModal("10","Tip speed of tail rotor blade of Bell 212 hel is:","715 ft/sec","814 ft/sec","725 ft/sec","740 ft/sec","2","3");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete10'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>The length of stabilizer bar of Bell 212 hel is:</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit11'
+							onclick = 'showUpdateModal("11","The length of stabilizer bar of Bell 212 hel is:","9\'05\"","10\'05\"","8\'10\"","10\'","2","2");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete11'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>daV</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit14'
+							onclick = 'showUpdateModal("14","daV","Ztt","a","gtt","f","2","1");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete14'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr><tr>
+					<td>daV</td>
+					
+					<td style='text-align:center'>
+						<button class='mini ui button blue'
+							id='edit15'
+							onclick = 'showUpdateModal("15","daV","Z","a","g","f","2","2");'
+							style=''
+							type='edit' 
+							name='edit'>Edit
+						</button>
+					</td>
+							
+							<td style='text-align:center'>
+								<button class='mini ui button red'
+									id='delete15'
+									style=''
+									type='delete' 
+									name='delete'>
+									Delete
+								</button>
+								
+							</td>
+					</tr>        </tbody>
+    </table>
+
+      <!-- </div> -->
+      </div>
+</div>
+</div>
+
+
+<div class="ui modal" id="addQuestion">
+<!-- <i class="close icon"></i> -->
+
+  <div class="header" style="text-align: center;">
+    Add Quiz Question
+  </div>
+<form class="ui form" method="POST">
+  <div class="ui basic text segment" style="margin: 20px;">
+	
+	<div class="required field">
+		<label>Paste Question</label>
+		<textarea rows="2" class="form-control" id="ques" name="ques" ></textarea>
+	</div>
+
+	
+	<div class="ui two column grid">
+		<div class=" required field column">
+			<label>Option 1</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="op1" name="op1" 
+						style="" class="form-control" placeholder="Paste Option 1">
+			</div>
+		</div>
+	  
+		<div class=" required field column">
+			<label>Option 2</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="op2" name="op2" 
+						style="" class="form-control" placeholder="Paste Option 2">
+			</div>
+		</div>
+	  
+		<div class=" required field column">
+			<label>Option 3</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="op3" name="op3" 
+						style="" class="form-control" placeholder="Paste Option 3">
+			</div>
+		</div>
+	  
+		<div class="required field column">
+			<label>Option 4</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="op4" name="op4" 
+						style="" class="form-control" placeholder="Paste Option 4">
+			</div>
+		</div>
+		
+		<div class="required field eight wide">
+			<label>Correct Answer</label>
+			<select class="ui dropdown" name="ans">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+				<option value="4">Four</option>
+			</select>
+		</div>
+		
+		<div class="required field eight wide">
+			<label>Question Module</label>
+			<select class="ui dropdown" name="type">
+				<option value="1">Engine</option>
+				<option value="2">Airframe</option>
+				<option value="3">Electic Components</option>
+				<option value="4">Instruments</option>
+				<option value="5">Radio</option>
+				<option value="6">Armaments</option>
+			</select>
+		</div>
+		
+	</div>
+	<center>
+		<button class="ui button red" 
+				style="margin-top: 25px;padding: 15px;" 
+				type="submit" 
+				name="submit">
+				<i class="add icon"></i>Create Question
+				
+		</button>
+	</center>
+	
+  </div>
+</form>
+  
+	
+	<div class="actions">
+		<div class="ui basic deny button">Cancel</div>
+	</div>
+</div>
+
+<!-- EDIT QUESTION MODAL -->
+<div class="ui modal" id="editQuestion">
+
+  <div class="header" style="text-align: center;">
+    Edit Quiz Question
+  </div>
+<form class="ui form" method="POST">
+  <div class="ui basic text segment" style="margin: 20px;">
+  
+	<input type="hidden" id="update-hidden-id" name="id" value="">
+	
+	<div class="required field">
+		<label>Paste Question</label>
+		<textarea rows="2" class="form-control" id="desc" name="desc" value=""></textarea>
+	</div>
+
+	
+	<div class="ui two column grid">
+		<div class=" required field column">
+			<label>Option 1</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="opA" name="opA" value=""
+						style="" class="form-control" placeholder="Paste Option 1">
+			</div>
+		</div>
+	  
+		<div class=" required field column">
+			<label>Option 2</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="opB" name="opB" value=""
+						style="" class="form-control" placeholder="Paste Option 2">
+			</div>
+		</div>
+	  
+		<div class=" required field column">
+			<label>Option 3</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="opC" name="opC" value=""
+						style="" class="form-control" placeholder="Paste Option 3">
+			</div>
+		</div>
+	  
+		<div class="required field column">
+			<label>Option 4</label>
+			<div class="ui input focus" style="">
+				<input type="text" id="opD" name="opD" value=""
+						style="" class="form-control" placeholder="Paste Option 4">
+			</div>
+		</div>
+		
+		<div class="required field eight wide">
+			<label>Correct Answer</label>
+			<select class="ui dropdown" name="correct" id="correct" value="">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+				<option value="4">Four</option>
+			</select>
+		</div>
+		
+		<div class="required field eight wide">
+			<label>Question Module</label>
+			<select class="ui dropdown" name="trade" id="trade">
+				<option value="1">Engine</option>
+				<option value="2">Airframe</option>
+				<option value="3">Electic Components</option>
+				<option value="4">Instruments</option>
+				<option value="5">Radio</option>
+				<option value="6">Armaments</option>
+			</select>
+		</div>
+		
+	</div>
+	<center>
+		<button class="ui button green" 
+				style="margin-top: 25px;padding: 15px;" 
+				type="submit" 
+				name="update">
+				<i class="edit icon"></i>Update Question
+				
+		</button>
+	</center>
+	
+  </div>
+</form>
+  
+	
+	<div class="actions">
+		<div class="ui basic deny button">Cancel</div>
+	</div>
+</div>
+
+
+
+<script>
+
+//show the data table
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+//add question modal
+$('#addQuestionButton').click(function(){
+  $('#addQuestion').modal('show');
+});
+
+// alert close icon
+$('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
+
+function showUpdateModal(id,desc,a,b,c,d,trade,ans)
+{
+alert(id + "\n" + desc + "\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + trade + "\n" + ans);
+	$('#update-hidden-id').val(id);
+	$("#editQuestion #desc").val(desc);
+	$("#editQuestion #opA").val(a);
+	$("#editQuestion #opB").val(b);
+	$("#editQuestion #opC").val(c);
+	$("#editQuestion #opD").val(d);
+	$("#editQuestion #coorect").val(a);
+	$("#editQuestion #trade").val(trade);
+	$('#editQuestion').modal('show');
+}
+
+</script>
+</body>
+</html>

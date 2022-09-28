@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bell-212 Tutorial - Airframe</title>
+  <link rel="stylesheet" href="../semantic/semantic.min.css">
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+  <script src="../semantic/semantic.min.js"></script>
+  
+  <style>
+    body {
+  background-image: url('../images/bell-back.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+    * {
+      font-family: "Open Sans Regular";
+      font-size: 1.01em;
+    }
+
+    .ui .button {
+      font-family: "Open Sans Regular";
+
+      font-size: 1.01em;
+    }
+
+  </style>
+
+</head>
+
+<body>
+ 
+
+<div class="ui large eight item top fixed red pointing menu" style="opacity: .8">
+  <div class="ui container">
+  <a href="../index.html">
+  <h2 class="ui header left aligned">
+  <img src="../images/bell-logo2.jpg"></img>
+  <div class="content">
+    Bell-212
+    <div class="sub header">Interactive Tutorial</div>
+  </div>
+</h2>
+</a>
+  <!-- <p class="item" style="font-size: 1.20em;">Bell-212 Tutorial</p></p> -->
+  <p class="item"></p>
+    <a class="item" href="../engine/engine.html">Engine</a>
+    <a class="active item" href="#" id="navmenu">Airframe</a>
+    <a class="item" href="../electric/electric.html">Electric Components</a>
+    <a class="item" href="../Instruments/Instruments.html">Instruments</a>
+    <a class="item" href="../radio/radio.html">Radio</a>
+    <!-- <a class="item" href="../404.html">Armaments</a> -->
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="stretched row">
+  <div class="one wide column"></div>
+  <div class="four wide column">
+    <div class="ui basic text segment" style="cursor: pointer;">
+      <div class="header" style="font-size: 16px;"><b>Contents</b></div>
+    <div class="ui fluid vertical red menu" id="hybrid">
+      
+      <div class="ui dropdown item">
+        <i class="dropdown icon"></i>
+        Introduction to Airframe
+        <select id="selectIntro" onchange="changeIntro();">
+          <option selected="">Overview</option>
+          <option>States of Overhauling</option>
+          <option>Process of Overhauling</option>
+        </select>
+      </div>
+
+
+      
+      <a class="item" onclick="javascript:setURL('publication.html');">Publications</a>
+      <a class="item" onclick="javascript:setURL('../js/pdfjs/web/viewer.html?file=docs/airworthiness.pdf');">Airworthiness</a>
+      <a class="item" onclick="javascript:setURL('../js/pdfjs/web/viewer.html?file=docs/overhaul-schedule.pdf');">Components Overhaul Schedule</a>
+      <a class="item" onclick="javascript:setURL('general-data.html');">General Data</a>
+      <a class="item" onclick="javascript:setURL('rotor.html');">Main Rotor</a>
+      <a class="item" onclick="javascript:setURL('tailrotor.html');">Tail Rotor</a>
+      <a class="item" onclick="javascript:setURL('xmission.html');">Transmission Assembly</a>
+      <a class="item" onclick="javascript:setURL('gearbox.html');">Gearbox</a>
+      <a class="item" onclick="javascript:setURL('powertrain.html');">Power Train</a>
+      
+
+      
+      
+    </div>
+  </div>
+
+  </div>
+  <div class="eleven wide column">
+  <div class="ui breadcrumb">
+  <div class="section">Airframe</div>
+  <i class="right chevron icon divider"></i>
+  <div class="active section" id="currentSection">Overview</div>
+  
+</div>
+  <br>
+    <iframe id="canvas" src="overview.html" style="height: 80vh; width: 65vw; padding: 1px; border: 0px;">
+    </iframe>
+
+  </div>
+</div>
+</div>
+
+<script>
+
+// function resizeIFrameToFitContent( iFrame ) {
+
+//     iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+//     iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+// }
+
+// window.addEventListener('DOMContentLoaded', function(e) {
+
+//     var iFrame = document.getElementById( 'canvas' );
+//     resizeIFrameToFitContent( iFrame );
+
+//     // or, to resize all iframes:
+//     var iframes = document.querySelectorAll("iframe");
+//     for( var i = 0; i < iframes.length; i++) {
+//         resizeIFrameToFitContent( iframes[i] );
+//     }
+// } );
+
+var pageTitle = {
+  'overview.html' : 'Overview', 
+  'overhaul-stage.html' : 'Overhauling (Stages)', 
+  'overhaul-process.html' : 'Overhauling (Process)', 
+  'publication.html': 'Publication',
+  '../js/pdfjs/web/viewer.html?file=docs/airworthiness.pdf': 'Airworthiness',
+  '../js/pdfjs/web/viewer.html?file=docs/overhaul-schedule.pdf': 'Overhauling (Schedule)',
+  'general-data.html': 'General Data',
+  'rotor.html' : 'Main Rotor',
+  'tailrotor.html' : 'Tail Rotor',
+  'xmission.html': 'Transmission Assembly',
+  'gearbox.html': 'Gearbox System',
+  'powertrain.html': 'Powertrain System'};
+
+function changeIntro() {
+    var selectBox = document.getElementById("selectIntro");
+    //var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    switch(selectBox.selectedIndex){
+      case 0:
+      setURL('overview.html');
+      break;
+
+      case 1:
+      setURL('overhaul-stage.html');
+      break;
+
+      case 2:
+      setURL('overhaul-process.html');
+      break;
+    }
+    //alert(selectedValue);
+   }
+
+$('#hybrid select')
+  .dropdown({
+    on: 'hover'
+  })
+;
+  
+
+  $('.menu')
+    .on('click', '.item', function() {
+        $('.item').removeClass('active');
+        // $('option').removeClass('selected');
+        $(this).not('.dropdown')
+          .addClass('active')
+          .siblings('.item')
+            .removeClass('active');
+        $('#navmenu').addClass('active');
+    });
+
+    function setURL(url){
+    document.getElementById('canvas').src = url;
+    document.getElementById('currentSection').innerHTML = pageTitle[url];
+
+
+  }
+</script>
+
+</body>
+
+</html>

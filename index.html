@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bell-212 CBT System</title>
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="js/jquery/jquery-3.4.1.min.js"></script>
+  <script src="semantic/semantic.min.js"></script>
+  <script src="js/crypto/crypto-core.js"></script>
+  <script src="js/crypto/sha256.js"></script>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- CSS File  -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Java Script file  -->
+  <script src="assets/js/main.js"></script>
+
+
+
+  <style>
+    * {
+      font-family: "Open Sans Regular";
+      font-size: 1.01em;
+    }
+
+    .ui .button {
+      font-family: "Open Sans Regular";
+
+      font-size: 1.01em;
+    }
+
+    .ui.red.vertical.stretched.menu .item:hover {
+      background-color: #19c8fd !important;
+      color: white !important;
+    }
+
+    a>div>p {
+      color: black;
+    }
+
+    .ui.fluid.card:hover * {
+      background-color: #19c8fd;
+      color: white !important;
+    }
+
+
+
+    body {
+      background-image: url("images/Airforce.webp");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="ui top red pointing menu" style="opacity: 0.6">
+
+    <div class="ui container" style="margin-top: 20px; padding-left: 70px;">
+      <a href="index.html">
+        <h2 class="ui header left aligned">
+          <img src="images/bell-logo2.jpg"></img>
+          <div class="content">
+            Bell-212
+            <div class="sub header">Interactive Tutorial</div>
+          </div>
+        </h2>
+      </a>
+      <!-- <p class="item" style="font-size: 1.20em;">Bell-212 Tutorial</p></p> -->
+
+    </div>
+
+    <div class="right menu " style="padding-right: 60px;">
+      <div class="ui grid">
+        <div class="row"></div>
+        <div class="row">
+          <div class="ui black button" id="adminlogin">
+            Admin Login
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-content-center align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Tutorial</h2>
+          <p class="animate__animated animate__fadeInUp">Go through detailed tutorial on different trades. Learn about
+            different componenets with the help of interactive 3D models.
+          </p>
+          <a  class="btn-get-started animate__animated animate__fadeInUp" id="btnTutorial">Read More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Quiz!</h2>
+          <p class="animate__animated animate__fadeInUp">Take self-assessment tests to evaluate your learnings about a
+            particular trade. Your score will be recorded in the leaderboard.
+          </p>
+          <a class="btn-get-started animate__animated animate__fadeInUp" id="btnQuiz">Read More</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">LeaderBoard</h2>
+          <p class="animate__animated animate__fadeInUp"></p>
+          <a class="btn-get-started animate__animated animate__fadeInUp" id="btnLeaderboard" href="leaderboard.php">Read More</a>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <!-- <div class="ui grid">
+    <div class="stretched row" style="height: 80vh; padding-top: 3% ">
+      <div class="one wide column"></div>
+      <div class="five wide column">
+        <div class="ui basic text segment">
+          <div class="ui vertical stretched menu" style="cursor: pointer; width: 100%;" style="opacity: .8">
+            <a class="active item" style="background: #06a3fd;" id="btnTutorial">
+              <p style="font-size: 110%;"><strong>Tutorial</strong></p>
+                                                                                                                                                      
+            </a>
+            <a class="item" id="btnQuiz">
+              <p style="font-size: 110%;"><strong>Quiz!</strong></p>
+    
+            </a>
+            <a class="item" id="btnLeaderboard" href="leaderboard.php" >
+              <p style="font-size: 110%;"><strong>Leaderboard</strong></p>
+              
+            </a>
+          </div>
+        </div>
+
+      </div> -->
+
+
+  <!-- <div class="eleven wide column">
+      <div class="ui grid">
+      <div class="row" style=""></div>
+      <div class="row">
+      <div class="one wide column">
+    </div>
+    <div class="fourteen wide column">
+
+    <img src="images/helicopter-background.png" />
+  </div>
+</div>
+</div>
+</div> -->
+
+
+  <!-- </div>
+  </div> -->
+
+
+  <div class="ui mini modal" id="login">
+    <i class="close icon"></i>
+    <div class="header">
+      <i class="red key icon" style="padding-right: 20px;"></i>
+      Administrative Mode
+    </div>
+
+    <!-- Modal content -->
+    <div class="ui basic text segment">
+
+      <p>
+        Please enter pin code:
+      </p>
+      <div class="ui fluid centered input">
+
+        <input type="password" id="pincode">
+      </div>
+
+      <div class="ui negative message" id="incorrectPasswordBanner">
+        <p>Incorrect Password!</p>
+        <i class="close icon" onclick="$('#incorrectPasswordBanner').fadeOut(); $('#pincode').focus()"></i>
+      </div>
+    </div>
+    <!-- End of Contents -->
+
+
+    <div class="actions">
+      <div class="ui basic deny button">
+        Cancel
+      </div>
+      <div class="ui red right labeled icon button" id="btnLogin" type="submit">
+        Login
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- <tutorial> -->
+  <div class="ui modal" id="tutorialpanel">
+    <!-- <i class="close icon"></i> -->
+    <div class="header" style="text-align: center;">
+      Select Tutorial Topic
+    </div>
+
+    <!-- Modal content for quiz -->
+    <div class="ui basic text segment" style="margin: 20px;">
+      <div class="ui three column grid">
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="engine/engine.html">
+            <div class="fluid content">
+              <p class="header">Engine</p>
+              <p>An engine or motor is a machine designed to convert one form of energy into mechanical energy.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="airframe/airframe.html">
+            <div class="fluid content">
+              <p class="header">Airframe</p>
+              <p>The mechanical structure of an aircraft is known as the airframe. Includes fuselage, undercarriage,
+                empennage and wings.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="electric/electric.html">
+            <div class="fluid content">
+              <p class="header">Electic Components</p>
+              <p>The electrical systems, in most helicopters, reflect the increased use of sophisticated avionics and
+                other electrical accessories.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="Instruments/instruments.html">
+            <div class="fluid content">
+              <p class="header">Instruments</p>
+              <p>The first prototype Bell 212 had an instrument flight rules (IFR) instrument kit with a large fin on
+                the roof to change the aircraft’s turning operation.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="radio/radio.html">
+            <div class="fluid content">
+              <p class="header">Radio</p>
+              <p>The instrument flight rules (IFR) avionics system includes twin allied signal KTR 908 720-channel,
+                very-high-frequency transceivers etc.</p>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="column">
+        <a class="ui fluid card" style="height: 150px;" href="404.html">
+          <div class="fluid content">
+            <p class="header">Armaments</p>
+            <p>All the cannon and small arms collectively, with their equipments, belonging to a ship or a fortification.</p>
+          </div>
+        </a>
+      </div> -->
+      </div>
+
+    </div>
+    <!-- End of Contents -->
+
+
+    <div class="actions">
+      <div class="ui basic deny button">
+        Close
+      </div>
+    </div>
+  </div>
+
+  <!-- <quiz> -->
+  <div class="ui modal" id="quizpanel">
+    <!-- <i class="close icon"></i> -->
+    <div class="header" style="text-align: center;">
+      Select Quiz Topic
+    </div>
+
+    <!-- Modal content for quiz -->
+    <div class="ui basic text segment" style="margin: 20px;">
+      <div class="ui three column grid">
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=1">
+            <div class="fluid content">
+              <p class="header">Engine</p>
+              <p>An engine or motor is a machine designed to convert one form of energy into mechanical energy.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=2">
+            <div class="fluid content">
+              <p class="header">Airframe</p>
+              <p>The mechanical structure of an aircraft is known as the airframe. Includes fuselage, undercarriage,
+                empennage and wings.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=3">
+            <div class="fluid content">
+              <p class="header">Electic Components</p>
+              <p>The electrical systems, in most helicopters, reflect the increased use of sophisticated avionics and
+                other electrical accessories.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=4">
+            <div class="fluid content">
+              <p class="header">Instruments</p>
+              <p>The first prototype Bell 212 had an instrument flight rules (IFR) instrument kit with a large fin on
+                the roof to change the aircraft’s turning operation.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=5">
+            <div class="fluid content">
+              <p class="header">Radio</p>
+              <p>The instrument flight rules (IFR) avionics system includes twin allied signal KTR 908 720-channel,
+                very-high-frequency transceivers etc.</p>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a class="ui fluid card" style="height: 150px;" href="quiz.php?type=6">
+            <div class="fluid content">
+              <p class="header">Armaments</p>
+              <p>All the cannon and small arms collectively, with their equipments, belonging to a ship or a
+                fortification.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <!-- End of Contents -->
+
+
+    <div class="actions">
+      <div class="ui basic deny button">
+        Close
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    //**************This function is being called when the Admin Login button is being pressed STARTS*******************
+    var verifyPinCode = function () {
+
+      //*******************Collecting the password occurs within this code STARTS************************
+      var pwd = $('#pincode').val();
+      if (pwd == '') return;
+      $('#pincode').addClass('disabled');
+      $('#incorrectPasswordBanner').hide();
+      $('#btnLogin').addClass('loading');
+      //********************Collecting the password occurs within this code ENDS*************************
+
+      //*****************************Converting the pass to hash starts*******************************
+      var hashText = CryptoJS.SHA256(pwd).toString();
+      //******************************Converting the pass to hash ends******************************
+
+      //***************Using the hash to make the authorization starts****************************
+
+      //here the php code in cred_checker is being used
+      var finish = $.post("controller/cred_checker.php", { password: hashText }, function (data) {
+        $('#btnLogin').removeClass('loading');
+        $('#pincode').removeClass('disabled');
+        if (data == 'false') {
+          $('#incorrectPasswordBanner').show();
+        }
+        else {
+          // alert('Invalid Password');
+          //alert('Correct Password!');
+          window.location.href = "admin_panel.php";
+        }
+      });
+      $('#pincode').val('');
+      //***************Using the hash to make the authorization ends****************************
+
+      //alert("Please wait while we are checking...");
+    }
+    //**************This function is being called when the Admin Login button is being pressed ENDS*******************
+
+
+    $('#pincode').keypress(function (e) {
+      var key = e.which;
+      if (key == 13)  // the enter key code
+      {
+        verifyPinCode();
+      }
+    });
+
+    $("#adminlogin").click(function () {
+      $('#incorrectPasswordBanner').hide();
+      $('#pincode').val('');
+      $('#login').modal('show');
+    });
+
+    $('#btnQuiz').click(function () {
+      $('#quizpanel').modal('show');
+    });
+
+    $('#btnTutorial').click(function () {
+      $('#tutorialpanel').modal('show');
+    });
+
+
+
+    $('#btnLogin').click(verifyPinCode);
+
+
+
+
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+</body>
+<footer>
+  <p align="middle">Developed by <a style="text-shadow: .5px .5px 2px #000000; color: #ff0000"
+      href="https://cse.mist.ac.bd">Dept of CSE, MIST</a> </p>
+</footer>
+
+</html>
